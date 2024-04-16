@@ -2,12 +2,14 @@ package spr1.order;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import spr1.AppConfig;
 import spr1.member.*;
 
 public class OrderServiceTest {
+    AppConfig appConfig = new AppConfig();
 
-    MemberService memberService = new MemberServiceImpl();
-    OrderService orderService = new OrderServiceImpl();
+    MemberService memberService = appConfig.memberService();
+    OrderService orderService = appConfig.orderService();
 
     @Test
     void createOrder() {
